@@ -5,6 +5,27 @@ function ClassicGuitar(manufactureYear, brand, price) {
   this.price = price;
   this.numberOfStrings = 6;
   this.used = false;
+  this.play = function () {
+    this.used = true;
+    return (this.price *= 0.9);
+  };
+  this.getManufactureYear = function () {
+    return this.manufactureYear;
+  };
+  this.getBrand = function () {
+    return this.brand;
+  };
+  this.getPrice = function () {
+    return this.price;
+  };
+}
+function detectSound(sound) {
+  if (sound === "🎸") {
+    return "ElectricGuitar";
+  } else if (sound === "🔊") {
+    return "BassGuitar";
+  }
+  return "ClassicGuitar";
 }
 
 const guitar1 = new ClassicGuitar(20, "logo", "electric");
